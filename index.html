@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupie Trackers</title>
+    <link rel="stylesheet" href="/style/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <h1>Artists</h1>
+    {{range .}}
+
+        <div class="divider">
+        <input type="checkbox" id="{{.ID}}" class="selectbutton" >
+        <label for="{{.ID}}"> </label>
+        <div class="group">
+
+
+            <div class="infocard">
+                <div class="d1">
+                    <img src="{{.Image}}" alt="{{.Name}}" id="{{.ID}}">
+
+                    <div class="d2">
+                        <span class="groupname">{{.Name}}</span>
+                    </div>
+
+                        <div class="d3">
+                            <p>Creation Date: {{.CreationDate}}</p>
+                            <p>First Album: {{.FirstAlbum}}</p>
+                        </div>
+                    <ul class="memberlist">Members: {{range .Members}}<li>{{.}}</li> {{end}}</ul>
+                </div>
+
+            </div>
+
+            
+            
+
+            <div class="details">
+
+                
+                <input type="radio" id="{{.Name}}1" name="{{.Name}}" class="selectmenu" checked="checked">
+                <label class="selectlabel s1" for="{{.Name}}1"><span>Concerts</span></label>
+                <div id="box1" class="box">
+                    <ul class="concertinfo">
+                        {{range .Concerts}}
+                            <li>
+                                <p>{{.Location}}</p>
+                                {{range .Dates}}<p class="t"> {{.}}<br>{{end}}</p>
+                            </li>
+                        {{end}}
+                    </ul>
+                </div>    
+            
+                <input type="radio" id="{{.Name}}2" name="{{.Name}}" class="selectmenu">
+                    <label class="selectlabel s2" for="{{.Name}}2"><span>Dates</span></label>
+                    <div id="box2" class="box">
+                        <ul class="concertinfo">
+                        {{range .Concerts}}
+                            <li>
+                                {{range .Dates}}<p>{{.}}<br>{{end}}</p>
+                            </li>
+                        {{end}}
+                    </ul>
+                    </div>
+
+                <input type="radio" id="{{.Name}}3" name="{{.Name}}" class="selectmenu">
+                    <label class="selectlabel s3" for="{{.Name}}3"><span>Locations</span></label>
+                    <div id="box3" class="box">
+                        <ul class="concertinfo">
+                        {{range .Concerts}}
+                            <li>
+                                <p>{{.Location}}</p>
+                            </li>
+                        {{end}}
+                    </ul>
+                </div>
+
+            
+
+           
+
+        </div>
+
+
+        
+
+        </div>
+    </div>
+    {{end}}
+</div>
+</body>
+</html>

@@ -1,0 +1,339 @@
+body {
+    font-family: "Rubik", sans-serif;
+    background-color: #999999;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #dddddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #333;
+}
+.divider{
+    flex-grow: 1;
+    display: flex;
+    padding: 20px;
+    padding-right: 5px;
+    background-color: #a5a5a5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+.group {
+
+    flex-grow: 1;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    gap:10px;
+}
+
+
+
+.infocard{
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    width: 450px;
+    height: 100px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+
+}
+.d1{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row ;
+        
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+}
+.d2{
+
+    
+    max-width: fit-content;
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    flex-direction: column;
+    align-self: stretch;    
+
+
+
+}
+.d3{
+    margin-top: 10px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+}
+.d3 p{
+    line-height: 1;
+}
+
+.groupname{
+    font-size: 25px;
+    height: fit-content;
+    width: fit-content;
+    font-weight: 500;
+
+
+}
+.memberlist{
+
+    margin-left: -25px;
+
+    flex-grow: 1;
+    display: flex;
+
+    gap: 5px;
+    min-width: 100px;
+    max-width: 300px;
+    max-height: 80px;
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    overflow-y: auto;
+
+
+
+}
+.memberlist li{
+    border-radius: 2px;
+}
+.memberlist li:nth-child(even){
+    background-color: #a5a5a5;
+}
+.memberlist li:nth-child(odd){
+    background-color: #c9c9c9;
+}
+
+.details{
+    background-color: #aaaaaa;
+    width: 315px;
+    height: 300px;
+    flex-direction: column; 
+    flex-wrap:wrap;
+    padding-top: 23px;
+    display: none;
+
+    border-radius: 5px;
+
+
+
+}
+
+
+.selectbutton{
+    display: none;
+}
+.selectbutton+label{
+
+    margin-left: 5px;
+    border-width: 0;
+    border-left-width: 15px;
+    border-right-width: 15px;
+    border-style: solid;
+    border-color: #a5a5a5;
+
+    font-size: 15px;
+    text-align: center;
+    line-height: 1;
+    
+    width: 2px;
+    height: 100px;
+    align-self: stretch;
+    background-color:#414a4b;
+    color: #aaaaaa;
+    order: 3;
+    align-self: flex-start;
+}
+.selectbutton+label:hover{
+    background-color: #ffffff;
+}
+.selectbutton:checked+label{
+    background-color: #414141;
+
+    height: 320px;
+}
+.selectbutton:checked+label:hover{
+    background-color: #d6fff1;
+
+}
+.selectbutton:checked+label+.group .details{
+
+    display: flex;
+
+}
+
+.selectbutton:checked+label+.group .infocard{
+    flex-direction: column;
+    height: 320px;
+}
+
+.selectbutton:checked+label+.group img{
+
+    width: 250px;
+    height: 250px;
+
+}
+.selectbutton:checked+label+.group .infocard .d2 span{
+
+    height: 60px;
+    text-wrap: nowrap;
+
+}
+.selectbutton:checked+label+.group .infocard .d2 span{
+
+    margin: 20px;
+    font-size: 30px;
+    width: 250px;
+
+}
+.selectbutton:checked+label+.group .infocard .d1{
+
+
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    max-height: 350px;
+    max-width: 500px;
+    
+}
+.selectbutton:checked+label+.group .infocard .d1 ul{
+    flex-grow: 1;
+    max-height: 220px;
+    max-width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+   overflow-y: auto;
+
+}
+
+
+
+
+.selectmenu:checked+label{
+
+    background-color: #777;
+
+    color: #ffffff;
+    
+    border: 3px solid;
+    border-bottom-width: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+
+    
+}
+
+.selectlabel{
+    background-color: #474747;
+    color: #bdbdbd;
+    width: 95px;
+    height: 18px;
+    padding-left: 3px;
+
+    border-radius: 5px;
+    
+
+    margin-top: -18px;
+    position: absolute;
+    
+
+}
+
+
+.s2{
+    margin-left: 105px;
+}
+.s3{
+    margin-left: 210px;
+}
+.t{
+    text-indent: 10px;
+}
+
+.box {
+    display: none;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.selectlabel:hover{
+    transition: 0.1s;
+    color: aquamarine;
+}
+
+input[type="radio"]:checked+label+.box{
+    flex-grow: 1;
+    background-color: #777;
+    display: block;
+    width: 315px;
+
+    height: 290px;
+
+    border: 3px solid;
+    border-color: #fff;
+    border-radius: 5px;
+}
+
+.concertinfo{
+    max-height: 270px;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+
+.group img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+
+.group p {
+    margin: 5px 0;
+}
+
+.group ul li {
+    list-style-type: none;
+}
+
+
+.box li{
+
+    line-height: 1;
+
+}
+.box .t:nth-child(even){
+    color: #aaaaaa;
+}
+
+
